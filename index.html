@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Informasi & Monitoring Air Kota Tarakan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Skip Link untuk Aksesibilitas Keyboard -->
+    <a href="#main">Lewati ke konten utama</a>
+
+    <!-- Header & Navigasi Utama -->
+    <header>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <!-- Logo SVG Air Modern -->
+            <svg width="45" height="45" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00E5FF" />
+                        <stop offset="100%" stop-color="#0052D4" />
+                    </linearGradient>
+                </defs>
+                <!-- Outer Glow / Circle Background -->
+                <circle cx="50" cy="50" r="45" fill="#E0F7FA" />
+                <!-- Modern Water Drop -->
+                <path d="M50 18 C50 18 26 50 26 66 A24 24 0 0 0 74 66 C74 50 50 18 50 18 Z" fill="url(#waterGrad)" />
+                <!-- Inner Wave Detail -->
+                <path d="M32 68 C40 62 48 72 58 66 C64 62 68 64 71 67 A24 24 0 0 1 29 67 C30 67.5 31 68 32 68 Z" fill="#FFFFFF" opacity="0.5" />
+                <!-- Highlight Shine -->
+                <ellipse cx="42" cy="48" rx="4" ry="9" transform="rotate(-25 42 48)" fill="#FFFFFF" opacity="0.6" />
+            </svg>
+            
+            <span style="font-weight: bold; font-size: 1.2rem; font-family: sans-serif; color: #0052D4;">PORTAL AIR TARAKAN</span>
+        </div>
+
+        <nav aria-label="Navigasi Utama">
+            <a href="#beranda">Beranda</a>
+            <a href="#data-titik-air">Data Titik Air</a>
+            <a href="#pengaduan-warga">Pengaduan Warga</a>
+            <a href="#login-admin">Login Admin</a>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main id="main">
+
+        <!-- SECTION 1: Beranda & Ringkasan Status -->
+        <section id="beranda">
+            <h1>Portal Informasi & Monitoring Air Kota Tarakan</h1>
+            <p>Layanan terpadu pemantauan ketersediaan air bersih dan pusat pelaporan gangguan warga.</p>
+            
+            <p>
+                <a href="#data-titik-air">Cari Titik Air</a> | 
+                <a href="#pengaduan-warga">Buat Laporan</a>
+            </p>
+
+            <article>
+                <h3>Ringkasan Status Air Kota Tarakan</h3>
+                <ul>
+                    <li><strong>Total Titik Pantau:</strong> 12 Lokasi</li>
+                    <li><strong>Status Air Normal:</strong> 85% Wilayah</li>
+                    <li><strong>Laporan Diproses:</strong> 4 Pengaduan</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- SECTION 2: Data Titik Air & Tabel Kualitas -->
+        <section id="data-titik-air">
+            <h2>Status Sumber Daya Air Terkini</h2>
+            <p>Data diperbarui secara berkala oleh pengelola instalasi pengolahan air Kota Tarakan.</p>
+
+            <!-- Artikel 1: IPA Kampung Satu -->
+            <article>
+                <h3>IPA Kampung Satu</h3>
+                <p><strong>Status:</strong> Normal / Lancar | <strong>Wilayah:</strong> Tarakan Tengah</p>
+                <p>Kondisi debit air stabil, distribusi ke pemukiman warga berjalan lancar tanpa kendala.</p>
+
+                <h4>Data Teknis & Parameter Kualitas Air IPA Kampung Satu</h4>
+                <table border="1">
+                    <caption>Spesifikasi Teknis & Hasil Pengujian Baku Mutu Water Quality</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Nilai Terukur</th>
+                            <th scope="col">Baku Mutu Permenkes</th>
+                            <th scope="col">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kapasitas / Debit Air</td>
+                            <td>100 L/detik</td>
+                            <td>&ge; 80 L/detik</td>
+                            <td>Sangat Baik</td>
+                        </tr>
+                        <tr>
+                            <td>Tingkat Kekeruhan (Turbidity)</td>
+                            <td>1.2 NTU</td>
+                            <td>Maks 3.0 NTU</td>
+                            <td>Jernih (Aman)</td>
+                        </tr>
+                        <tr>
+                            <td>Derajat Keasaman (pH)</td>
+                            <td>7.2 pH</td>
+                            <td>6.5 - 8.5 pH</td>
+                            <td>Normal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- Artikel 2: IPA Binalatung -->
+            <article>
+                <h3>IPA Binalatung</h3>
+                <p><strong>Status:</strong> Pemeliharaan | <strong>Wilayah:</strong> Tarakan Timur</p>
+                <p>Sedang dilakukan pembersihan pipa filter utama. Aliran air mungkin mengecil sementara.</p>
+
+                <h4>Data Teknis & Parameter Kualitas Air IPA Binalatung</h4>
+                <table border="1">
+                    <caption>Spesifikasi Teknis & Hasil Pengujian Baku Mutu Water Quality</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Nilai Terukur</th>
+                            <th scope="col">Baku Mutu Permenkes</th>
+                            <th scope="col">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kapasitas / Debit Air</td>
+                            <td>120 L/detik</td>
+                            <td>&ge; 100 L/detik</td>
+                            <td>Penurunan Sementara</td>
+                        </tr>
+                        <tr>
+                            <td>Tingkat Kekeruhan (Turbidity)</td>
+                            <td>2.8 NTU</td>
+                            <td>Maks 3.0 NTU</td>
+                            <td>Ambang Batas Normal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- Artikel 3: Embung Juata Permai -->
+            <article>
+                <h3>Embung Juata Permai</h3>
+                <p><strong>Status:</strong> Keruh / Gangguan | <strong>Wilayah:</strong> Tarakan Utara</p>
+                <p>Tingkat kekeruhan meningkat akibat curah hujan tinggi. Petugas sedang melakukan sedimentasi.</p>
+
+                <h4>Data Teknis & Parameter Kualitas Air Embung Juata Permai</h4>
+                <table border="1">
+                    <caption>Spesifikasi Teknis & Hasil Pengujian Baku Mutu Water Quality</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Nilai Terukur</th>
+                            <th scope="col">Baku Mutu Permenkes</th>
+                            <th scope="col">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Volume Tampungan Air</td>
+                            <td>1.200.000 m³</td>
+                            <td>1.500.000 m³</td>
+                            <td>Kapasitas 80%</td>
+                        </tr>
+                        <tr>
+                            <td>Tingkat Kekeruhan (Turbidity)</td>
+                            <td>6.5 NTU</td>
+                            <td>Maks 3.0 NTU</td>
+                            <td>Keruh (Tinggi)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!-- SECTION 3: Form Pengaduan Warga -->
+        <section id="pengaduan-warga">
+            <h2>Form Pengaduan Warga</h2>
+            <p>Sampaikan laporan gangguan air baku, pipa bocor, atau air keruh di wilayah Anda secara langsung:</p>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="nama_pelapor">Nama Lengkap Pelapor:</label><br>
+                    <input type="text" id="nama_pelapor" name="nama_pelapor" required placeholder="Contoh: Alisya Salza">
+                </p>
+
+                <p>
+                    <label for="whatsapp">Nomor HP / WhatsApp Active:</label><br>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="Contoh: 081234567890">
+                </p>
+
+                <p>
+                    <label for="lokasi_pantau">Pilih Lokasi Sumber Air / Embung:</label><br>
+                    <select id="lokasi_pantau" name="lokasi_pantau" required>
+                        <option value="">-- Pilih Lokasi --</option>
+                        <option value="kampung_satu">IPA Kampung Satu (Tarakan Tengah)</option>
+                        <option value="binalatung">IPA Binalatung (Tarakan Timur)</option>
+                        <option value="juata_permai">Embung Juata Permai (Tarakan Utara)</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="detail_pengaduan">Isi Detail Laporan Gangguan:</label><br>
+                    <textarea id="detail_pengaduan" name="detail_pengaduan" rows="5" required placeholder="Jelaskan masalah air mati, tekanan kecil, atau keruh..."></textarea>
+                </p>
+
+                <p>
+                    <button type="submit">Kirim Laporan Pengaduan</button>
+                </p>
+            </form>
+        </section>
+
+        <!-- SECTION 4: Login Admin -->
+        <section id="login-admin">
+            <h2>Login Administrator & Operator</h2>
+            <p>Akses terbatas khusus untuk petugas pemantau dan operator air baku Kota Tarakan:</p>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="username_admin">Username Operator:</label><br>
+                    <input type="text" id="username_admin" name="username_admin" required placeholder="Masukkan ID petugas">
+                </p>
+
+                <p>
+                    <label for="password_admin">Kata Sandi (Password):</label><br>
+                    <input type="password" id="password_admin" name="password_admin" required placeholder="••••••••">
+                </p>
+
+                <p>
+                    <button type="submit">Masuk ke Dashboard Admin</button>
+                </p>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Portal Sumber Daya Air Kota Tarakan — Disusun oleh Alisya Salza Nabilla (2440304011).</p>
+    </footer>
+
+</body>
+</html>
