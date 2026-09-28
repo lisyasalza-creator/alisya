@@ -1,29 +1,75 @@
+// js/utils.js
+
+// ========================================
+// REKAPITULASI DATA
+// ========================================
+
 export function ringkasInventarisAir(data) {
-    // Error handling dasar: pastikan input berupa array
-    if (!Array.isArray(data)) {
-        throw new TypeError('Kesalahan: Data yang dimasukkan harus berupa Array of Objects!');
-    }
-    
-    // Error handling jika data kosong
-    if (data.length === 0) {
-        throw new Error('Peringatan: Data inventaris masih kosong.');
-    }
+  if (!Array.isArray(data)) {
+    throw new TypeError(
+      'Kesalahan: Data harus berupa Array!'
+    );
+  }
 
-    const totalLokasi = data.length;
-    const totalKapasitas = data.reduce((acc, curr) => acc + curr.jumlah, 0);
-    const lokasiNormal = data.filter((item) => item.kondisi === "Baik").length;
-    const lokasiGangguan = data.filter((item) => item.kondisi !== "Baik").length;
+  if (data.length === 0) {
+    throw new Error(
+      'Peringatan: Data masih kosong.'
+    );
+  }
 
-    return {
-        totalTitikPantau: totalLokasi,
-        totalDebitKeseluruhan: totalKapasitas,
-        jumlahLokasiNormal: lokasiNormal,
-        jumlahLokasiGangguan: lokasiGangguan
-    };
+  return {
+    totalLokasi: data.length,
+
+    totalDebit: data.reduce(
+      (acc, curr) => acc + curr.jumlah,
+      0
+    ),
+
+    jumlahBaik: data.filter(
+      item => item.kondisi === "Baik"
+    ).length,
+
+    jumlahPerluCek: data.filter(
+      item => item.kondisi !== "Baik"
+    ).length
+  };
 }
 
-// pencarian menggunakan method .find()
-export function cariAlatDenganId(data, idCari) {
-    if (!Array.isArray(data)) throw new TypeError('Data harus berupa array');
-    return data.find(item => item.id === idCari);
+
+// WEB STORAGE - TEMA
+export function inisialisasiTema() {
+  const temaTersimpan =
+    localStorage.getItem("theme") ?? "light";
+  document.documentElement.dataset.theme =
+    temaTersimpan;
+}
+
+export function gantiTema() {
+  const temaSekarang =
+    document.documentElement.dataset.theme;
+  const temaBerikutnya =
+    temaSekarang === "dark"
+      ? "light"
+      : "dark";
+
+  document.documentElement.dataset.theme =
+    temaBerikutnya;
+  localStorage.setItem(
+    "theme",
+    temaBerikutnya
+  );
+}
+
+// WEB STORAGE - JUMLAH ITEM
+export function inisialisasiLimitItem() {
+  return (
+    localStorage.getItem("limit_item") ?? "5"
+  );
+}
+
+export function simpanLimitItem(jumlah) {
+  localStorage.setItem(
+    "limit_item",
+    jumlah
+  );
 }
