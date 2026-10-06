@@ -330,54 +330,92 @@
 
       </section>
 
-
       <!-- PENGADUAN -->
       <section id="pengaduan-warga">
-
-        <h2>Form Pengaduan Warga</h2>
-
-        <form id="form-pengaduan">
+        <h2>Form Pendataan & Pengaduan Fasilitas Air</h2>
+        <form id="form-alat" novalidate>
 
           <p>
-            <label for="nama_pelapor">
-              Nama Lengkap:
-            </label>
-
+            <label for="nama_pelapor">Nama Pelapor:</label>
             <input
               type="text"
               id="nama_pelapor"
+              name="nama_pelapor"
               required
-              placeholder="Contoh: Alisya"
+              minlength="3"
+              placeholder="Contoh: Alisya Salza"
             />
+            <span class="error" id="error-nama_pelapor"></span>
           </p>
 
           <p>
-            <label for="detail_pengaduan">
-              Detail Laporan:
-            </label>
-
-            <textarea
-              id="detail_pengaduan"
-              rows="4"
+            <label for="nama">Nama Alat / Fasilitas:</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
               required
-              placeholder="Tulis laporan..."
-            ></textarea>
+              minlength="3"
+              placeholder="Contoh: Pompa Rawasari"
+            />
+            <span class="error" id="error-nama"></span>
+          </p>
+
+          <p>
+            <label for="kategori">Kategori:</label>
+            <select id="kategori" name="kategori" required>
+              <option value="">Pilih Kategori</option>
+              <option value="Tarakan Tengah">Tarakan Tengah</option>
+              <option value="Tarakan Selatan">Tarakan Timur</option>
+              <option value="Tarakan Barat">Tarakan Barat</option>
+              <option value="Tarakan Utara">Tarakan Utara</option>
+            </select>
+            <span class="error" id="error-kategori"></span>
+          </p>
+
+          <p>
+            <label for="jumlah">Jumlah jiwa/ Warga terdampak:</label>
+            <input
+              type="number"
+              id="jumlah"
+              name="jumlah"
+              required
+              min="0"
+              placeholder="Contoh: 50"
+            />
+            <span class="error" id="error-jumlah"></span>
+          </p>
+
+          <p>
+            <label for="kondisi">Kondisi:</label>
+            <select id="kondisi" name="kondisi" required>
+              <option value="">Pilih Kondisi</option>
+              <option value="Baik">Baik</option>
+              <option value="Perlu Cek">Perlu Cek</option>
+            </select>
+            <span class="error" id="error-kondisi"></span>
+          </p>
+
+          <p>
+            <label for="tanggal">Tanggal Perolehan:</label>
+            <input
+              type="date"
+              id="tanggal"
+              name="tanggal"
+              required
+            />
+            <span class="error" id="error-tanggal"></span>
           </p>
 
           <button type="submit">
             Kirim Laporan
           </button>
-
         </form>
-
-        <p id="pesan-pengaduan"></p>
-
+        <p id="form-status" aria-live="polite"></p>
       </section>
-
-
+      
       <!-- LOGIN ADMIN -->
       <section id="login-admin">
-
         <h2>Login Admin</h2>
 
         <form id="form-login">
@@ -386,7 +424,6 @@
             <label for="username_admin">
               Username:
             </label>
-
             <input
               type="text"
               id="username_admin"
