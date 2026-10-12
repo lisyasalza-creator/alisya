@@ -413,13 +413,13 @@
         </form>
         <p id="form-status" aria-live="polite"></p>
       </section>
-      
+
+
+
       <!-- LOGIN ADMIN -->
       <section id="login-admin">
         <h2>Login Admin</h2>
-
         <form id="form-login">
-
           <p>
             <label for="username_admin">
               Username:
@@ -450,6 +450,19 @@
           </button>
         </form>
       </section>
+
+      <!-- praktikum 7 -->
+<!-- DATA PENGGUNA MODUL 7 -->
+      <section style="background: var(--card-color); padding: var(--space-lg); border-radius: var(--radius); margin-bottom: var(--space-lg);">
+        <h2>Data Pengguna</h2>
+       <input type="text" id="username" name="username" placeholder="Username">
+        <p id="api-message" aria-live="polite">Memuat...</p>
+        <ul id="api-output" style="margin-top: 1rem; padding-left: 1.5rem;"></ul>
+        <button id="btn-retry" type="button" style="display: none; margin-top: 1rem;">Coba Lagi (Retry)</button>
+      </section>
+
+    </main>
+
     </main>
     <footer>
 
@@ -459,6 +472,7 @@
       </p>
 
     </footer>
+
 
 
     <!-- JavaScript cukup satu kali -->
