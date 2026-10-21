@@ -1,0 +1,6 @@
+{
+    "name": "tarakan/water-resources",
+    "description": "Backend API for Water Resources Tarakan",
+    "type": "project",
+    "require": {}
+}
