@@ -1,19 +1,19 @@
 <?php
-/**
- * File: api/health.php
- * Keterangan: Endpoint GET untuk pengecekan status kesehatan/keaktifan API[cite: 4, 8].
- */
-
 declare(strict_types=1);
 
-// Mengatur header agar respons dikenali sebagai JSON dengan encoding UTF-8
+// Middleware sederhana: Pastikan response berupa JSON
 header('Content-Type: application/json; charset=utf-8');
 
-// Mengatur kode status HTTP 200 OK
-http_response_code(200);
+// Hanya izinkan method GET
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    http_response_code(405);
+    echo json_encode(['error' => 'Method tidak diizinkan'], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 
-// Mengembalikan respons berformat JSON dengan status "ok"[cite: 8]
+http_response_code(200);
 echo json_encode([
-    'status' => 'ok'
+    'status' => 'ok',
+    'message' => 'API Portal Air Tarakan berjalan dengan baik menggunakan PHP 8.4'
 ], JSON_UNESCAPED_UNICODE);
 exit;
