@@ -1,0 +1,43 @@
+name: PHP CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  php-syntax-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo, pdo_mysql, json
+          coverage: none
+
+      - name: Syntax check all PHP files
+        run: |
+          find . -type f -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
+
+      - name: Run simple tests
+        run: |
+          if [ -f "vendor/bin/phpunit" ]; then
+            vendor/bin/phpunit
+          elif [ -f "tests/smoke_test.php" ]; then
+            php tests/smoke_test.php
+          else
+            php -r '
+              $files = glob("api/*.php");
+              if (empty($files)) {
+                fwrite(STDERR, "No PHP files found in api/\n");
+                exit(1);
+              }
+              echo "Verified " . count($files) . " API endpoint files exist and passed lint.\n";
+            '
+          fi
